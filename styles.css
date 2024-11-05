@@ -6,23 +6,30 @@
 
 
 body {
-    font-family: sans-serif;
+    font-family: 'Hanken Grotesk', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: aliceblue;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
 }
 
 .container {
     display: flex;
     background-color: #fff;
-    max-width: 600px;
-    width: 70%;
-    max-height: 500px;
-    height: 60%;
+    max-width: 700px;
+    width: 90%;
+    border-radius: 25px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.left-side, .right-side {
+    flex: 1; 
+    padding: 20px;
+
 }
 
 .left-side {
@@ -34,6 +41,7 @@ body {
     border-radius: 25px;
     width: 50%;
     align-items: center;
+    justify-content: center;
 }
 
 .gray {
@@ -44,47 +52,216 @@ body {
 
 .circle {
     background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
-    height: 30%;
-    width: 30%;
-    border-radius: 100%;
-    margin: 40px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 20px;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .circle h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .circle p {
     color: darkgray;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .white {
     font-size: 1.8rem;
-    margin: 30px auto;
+    margin: 10px auto;
 
 }
 
 .text {
-    color: darkgray;
-    font-size: 0.9rem;
-    margin: 20px auto;
+    color: rgb(235, 227, 227);
+    font-size: 1rem;
+    margin: 15px 0;
+    text-align: center;
 }
 
 .right-side {
     background-color: #fff;
     display: flex;
-    padding: 20px 30px;
+    flex-direction: column;
+    padding: 20px;
     color: hsl(224, 30%, 27%);
     width: 50%;
+    border-radius: 25px;
+}
+
+.right-side h3 {
+    align-self: flex-start;
+    font-size: 1.6rem;
+    color: black;
+    margin-bottom: 15px;
+    margin-left: 12px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    height: 90%;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.item1, .item2, .item3, .item4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.reaction, .memory, .verbal, .visual {
+    display: flex;
+}
+
+.reaction-text, .memory-text, .verbal-text, .visual-text {
+    margin-top: 2px;
+    font-weight: 650;
+}
+
+.reaction-text {
+    color: hsl(0, 100%, 67%);
+}
+
+.memory-text {
+    color: hsl(39, 100%, 56%);
+}
+
+.verbal-text {
+    color: hsl(166, 100%, 37%)
+}
+
+.visual-text {
+    color: hsl(234, 85%, 45%)
 }
 
 
 
+.item1 {
+    background-color: hsl(0, 100%, 67%, 0.05);;
+}
+
+.item2 {
+    background-color: hsl(39, 100%, 56%, 0.05);
+}
+
+.item3 {
+   background-color: hsl(166, 100%, 37%, 0.05);
+}
+
+.item4 { 
+    background-color: hsl(234, 85%, 45%, 0.05);
+}
+
+
+img {
+    margin-right: 10px;
+    height: 25px;
+    padding-bottom: ;
+}
+
+b {
+    font-weight: 800;
+}
+
+.continue {
+    background-color: hsl(224, 30%, 27%);
+    color: #fff;
+    border-radius: 20px;
+    padding: 12px;
+    font-size: 1.1rem;
+    transition: transform 0.2s
+}
+
+.continue:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    text-decoration: underline;
+    background-color: hsl(241, 81%, 54%)
+
+}
 
 .attribution {
     position: absolute;
     bottom: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .left-side, .right-side {
+        width: 100%;
+    }
+
+    .circle {
+        height: 150px;
+        width: 150px;
+    }
+
+    .circle h1 {
+        font-size: 3rem;
+    }
+
+    .gray {
+        font-size: 1.2rem;
+    }
+
+    .right-side h3 {
+        font-size: 1.4rem;
+    }
+
+    .text, .white {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .circle {
+        height: 120px;
+        width: 120px;
+    }
+
+    .circle h1 {
+        font-size: 2.5rem;
+    }
+
+    .gray {
+        font-size: 1rem;
+    }
+
+    .right-side h3 {
+        font-size: 1.2rem;
+    }
+
+    .text, .white {
+        font-size: 0.8rem;
+    }
+
+    .grid-container {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .attribution {
+        position: relative
+    }
 }
